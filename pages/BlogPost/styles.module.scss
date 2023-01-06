@@ -1,0 +1,57 @@
+.AnimalPage {
+    &__container{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+  &__header {
+    background-color: #28293e;
+    width: 100vw;
+    min-height: 40rem;
+    padding-top: 10.4rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    
+    @media (min-width: 1024px){
+        padding-top: 10rem;
+        min-height: 40rem;
+    }
+    
+  }
+
+  &__subHeader {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    opacity: 60%;
+    font-weight: 400;
+    line-height: 3.2rem;
+    letter-spacing: 0.2rem;
+    max-width: 32.9rem;
+    margin: auto;
+    @media (min-width: 1024px){
+        padding-top: 5rem;
+        text-align: center;
+        max-width: 57.0rem;
+        margin: auto;
+    }
+  }
+
+  &__img {
+    width: 32.9rem;
+    height: 18.4rem;
+    object-fit: fit;
+   
+    position: relative;
+    margin: 8rem auto;
+   
+     
+    
+    @media (min-width: 1024px) {
+     margin: 8rem auto;
+      display: flex;
+        width: 117rem;
+      height: 65.6rem;
+    }
+  }
+}

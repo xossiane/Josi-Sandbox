@@ -3,6 +3,11 @@
     font-style: normal;
     line-height: 8rem;
     letter-spacing: -2px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
 
     &--H1 {
       font-size: 7.2rem;
@@ -22,7 +27,7 @@
   
     @media (min-width: 1024px) {
       &--H1 {
-        font-size: 4.5rem;
+        font-size: 7.2rem;
       }
       &--H2 {
         font-size: 4rem;

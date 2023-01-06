@@ -7,6 +7,7 @@ export default function Heading({
   format,
   level,
   children,
+  
 }) {
   const classList = [styles.heading];
   classList.push(styles[`heading--${size}`]);
