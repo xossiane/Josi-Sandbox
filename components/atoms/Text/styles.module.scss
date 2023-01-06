@@ -1,0 +1,29 @@
+
+.text {
+  &--large {
+    font-size: 2rem;
+  }
+  &--small {
+    font-size: 1.6rem;
+  }
+
+  &--dark {
+    color: #391400;
+  }
+  &--lightOrange{
+    color: #F9E5DA;
+  }
+  &--orange {
+    color: #EF6D58;
+  }
+  &--white {
+    color: #ffffff;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+  &--italic {
+    font-style: italic;
+  }
+}

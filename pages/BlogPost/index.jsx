@@ -1,5 +1,9 @@
+
+
 //calling API data from contentful using:
 import * as contentful from "contentful";
+import Heading from "../../components/atoms/Heading";
+import Text from "../../components/atoms/Text";
 
 
 var client = contentful.createClient({
@@ -32,12 +36,16 @@ export default function AnimalPage({response}) {
   
   return (
     
+    
     response.map((item) => {
       
       return (
       <>
-      <h1>{item.fields.name}</h1>
-      <h1>{item.fields.habitat}</h1>
+      <header className={styles[`AnimalPage__header`]}>
+      
+      </header>
+      <Heading color="dark" level="4">{item.fields.name}</Heading>
+      <Text color="orange">{item.fields.habitat}</Text>
       <img src={item.fields.image.fields.file.url} alt="animal" width="200" height="200" />{" "}
       {/* this is where my data shows into app */}
       </>
