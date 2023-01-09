@@ -8,12 +8,14 @@ export default function Heading({
   level,
   children,
   
+  
 }) {
   const classList = [styles.heading];
   classList.push(styles[`heading--${size}`]);
   classList.push(styles[`heading--${color}`]);
   classList.push(styles[`heading--${format}`]);
   classList.push(styles[`heading--H${level}`]);
+
   
 
   const props = { className: classList.join(" ") };

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./styles.module.scss";
 //calling API data from contentful using:
 import * as contentful from "contentful";
@@ -24,6 +25,7 @@ export async function getStaticProps() {
   };
 }
 
+
 //this is where my function starts
 export default function AnimalPage({ response }) {
   return (
@@ -45,11 +47,12 @@ export default function AnimalPage({ response }) {
               alt="animal"
               className={styles[`AnimalPage__img`]}
             />
-            <Text color="orange">{item.fields.habitat}</Text>
-            <Heading color="dark" level="4">
+            <Text color="orange" size="large" className={styles[`AnimalPage__habitat`]}>{item.fields.habitat}</Text>
+            <Heading color="dark" level="2">
               {item.fields.name}
             </Heading>
             
+            <Text color="dark" size="small" className={styles[`AnimalPage__description`]}>{item.fields.description}</Text>
             {" "}
             {/* this is where my data shows into app */}
           </>
