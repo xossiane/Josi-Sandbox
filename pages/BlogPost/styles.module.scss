@@ -4,6 +4,7 @@
         flex-direction: column;
         margin: auto;
         background-color: #F9E5DA;
+        padding-bottom: 26rem;
     }
   &__header {
     background-color: #28293e;
@@ -31,6 +32,7 @@
   }
   }
   &__subHeader {
+    text-align: left;
     padding-top: 2rem;
     padding-bottom: 4rem;
     text-align: center;
@@ -49,11 +51,19 @@
   }
 
   &__description{
+    text-align: center;
     opacity: 64%;
     margin-left: 2.3rem;
     margin-right: 2.3rem;
     margin-top: 3.1rem;
     line-height: 3.2rem;
+    @media (min-width: 700px){
+      margin-top: 6rem;
+      margin-left: 10rem;
+      margin-right: 10rem;
+      min-width: 57rem;
+      min-height: 22.7rem;
+  }
     @media (min-width: 1024px){
       margin-top: 6rem;
       margin-left: 43.5rem;
@@ -66,7 +76,7 @@
   &__img {
     width: 32.9rem;
     height: 18.4rem;
-    object-fit: fit;
+    object-fit: scale-up;
    
     position: relative;
     margin: 8rem auto;
