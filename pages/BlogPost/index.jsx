@@ -25,7 +25,6 @@ export async function getStaticProps() {
   };
 }
 
-
 //this is where my function starts
 export default function AnimalPage({ response }) {
   return (
@@ -34,7 +33,11 @@ export default function AnimalPage({ response }) {
         <Heading color="white" level="1">
           Where do they live?
         </Heading>
-        <Text color="white" size="small" className={styles[`AnimalPage__subHeader`]}>
+        <Text
+          color="white"
+          size="small"
+          className={styles[`AnimalPage__subHeader`]}
+        >
           We are just testing how things come from contentful and I chose
           animals
         </Text>
@@ -42,18 +45,31 @@ export default function AnimalPage({ response }) {
       {response.map((item) => {
         return (
           <>
-          <img
+            <img
               src={item.fields.image.fields.file.url}
               alt="animal"
               className={styles[`AnimalPage__img`]}
+              key={item.fields.id}
             />
-            <Text color="orange" size="large" className={styles[`AnimalPage__habitat`]}>{item.fields.habitat}</Text>
-            <Heading color="dark" level="2">
+            <Text
+              color="orange"
+              size="large"
+              className={styles[`AnimalPage__habitat`]}
+              key={item.fields.id}
+            >
+              {item.fields.habitat}
+            </Text>
+            <Heading color="dark" level="2" key={item.fields.id}>
               {item.fields.name}
             </Heading>
-            
-            <Text color="dark" size="small" className={styles[`AnimalPage__description`]}>{item.fields.description}</Text>
-            {" "}
+            <Text
+              color="dark"
+              size="small"
+              className={styles[`AnimalPage__description`]}
+              key={item.fields.id}
+            >
+              {item.fields.description}
+            </Text>{" "}
             {/* this is where my data shows into app */}
           </>
         );
