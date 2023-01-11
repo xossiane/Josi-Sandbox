@@ -13,11 +13,15 @@ var client = contentful.createClient({
 export async function getStaticProps() {
   //get data from headless CMS
   const animal = await client.getEntries({
-    content_type: "animal",
+    content_type: "animal"
   });
+  const habitat = await client.getEntries({
+    content_type: "habitat"
+  })
   return {
     props: {
       response: animal.items,
+      response2: animal.items
 
       /* ...animal.fields, */
       /* image: animal.fields.image.fields.file.url, */
@@ -26,7 +30,7 @@ export async function getStaticProps() {
 }
 
 //this is where my function starts
-export default function AnimalPage({ response }) {
+export default function AnimalPage({ response, response2 }) {
   return (
     <div className={styles[`AnimalPage__container`]}>
       <header className={styles[`AnimalPage__header`]}>
@@ -43,6 +47,7 @@ export default function AnimalPage({ response }) {
         </Text>
       </header>
       {response.map((item) => {
+        console.log(response)
         return (
           <>
             <img
@@ -51,14 +56,19 @@ export default function AnimalPage({ response }) {
               className={styles[`AnimalPage__img`]}
               key={item.fields.id}
             />
-            <Text
-              color="orange"
-              size="large"
-              className={styles[`AnimalPage__habitat`]}
-              key={item.fields.id}
-            >
-              {item.fields.habitat}
-            </Text>
+            
+            
+               {item.fields.habitat.map((item) => (
+                <Text
+               color="orange"
+               size="large"
+               className={styles[`AnimalPage__habitat`]}
+               key={item.sys.id}
+             >
+              {item.fields.name}
+               </Text>
+               ))}
+          
             <Heading color="dark" level="2" key={item.fields.id}>
               {item.fields.name}
             </Heading>
@@ -77,3 +87,6 @@ export default function AnimalPage({ response }) {
     </div>
   );
 }
+
+/* 
+*/
